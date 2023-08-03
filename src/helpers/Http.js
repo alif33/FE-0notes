@@ -2,10 +2,11 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const api = axios.create({
-  baseURL: "https://aidyb.vercel.app/api/",
+  baseURL: "http://localhost:4000/api/",
+  // baseURL: "https://aidyb.vercel.app/api/",
 });
 
-export default async (method, endPoint, formData, token) => {
+const Http =  async (method, endPoint, formData, token) => {
     try {
         const __f__ = formData? formData: {}
         const headers = token ? {
@@ -19,3 +20,5 @@ export default async (method, endPoint, formData, token) => {
         return error;
     }
 };
+
+export default Http

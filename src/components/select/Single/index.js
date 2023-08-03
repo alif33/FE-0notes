@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Select from "react-select";
-import MyOption from "./MyOption";
+import Option from "./Option";
 
 const Single = ({ lists })=>{
     const [selectedOption, setSelectedOption] = useState(null);
@@ -25,7 +25,7 @@ const Single = ({ lists })=>{
             classNamePrefix="select"
             className="basic-multi-select"
             placeholder="search"
-            components={{ Option: MyOption }}
+            components={{ Option }}
         />
     )
 }

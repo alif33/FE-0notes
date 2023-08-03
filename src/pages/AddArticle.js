@@ -4,27 +4,32 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import conf from "../config/react-quill"
 import Http from "../helpers/Http";
+import { toast } from "react-hot-toast";
 
-
-const Insert = ()=>{
+const AddArticle = ()=>{
     const [title, setTitle] = useState('');
-    const [type, setType] = useState('');
     const [category, setCategory] = useState('');
-    const [packageName, setPackageName] = useState('');
+    const [modules, setModules] = useState('');
+    const [snippets, setSnippets] = useState('');
     const [content, setContent] = useState('');
 
     const handleSubmit = e =>{
         e.preventDefault()
-        Http('post', '/post', {
+        Http('post', '/article', {
             title,
-            type,
             category,
+            modules,
+            snippets,
             content
         })
         .then(res=>{
-            console.log(res);
+            if(res.success){
+                toast.success(`${res.message}`);
+            }
         })
-        console.log(title, type, packageName, content);
+        .catch(err=>{
+            console.log(err);
+        })
     }
 
     return(
@@ -32,7 +37,7 @@ const Insert = ()=>{
             <div className="__form">
                 <form onSubmit={handleSubmit} className="mt-5">
                     <div className="row">
-                        <div className="col-md-6 mb-3">
+                        <div className="col-md-8 mb-3">
                             <input 
                                 type="text" 
                                 className="form-control" 
@@ -40,7 +45,7 @@ const Insert = ()=>{
                                 onChange={e=>setTitle(e.target.value)}
                             />
                         </div>
-                        <div className="col-md-3 mb-3">
+                        <div className="col-md-4 mb-3">
                             <select onChange={e=>setCategory(e.target.value)} className="form-select">
                                 <option>Select Category</option>
                                 <option value="tool">Tool</option>
@@ -48,13 +53,21 @@ const Insert = ()=>{
                                 <option value="configuration">Configuration</option>
                             </select>
                         </div>
-                        <div className="col-md-3 mb-3">
-                            <input 
-                                type="text" 
+                    </div>
+                    <div className="row">
+                        <div className="col-md-6 mb-3">
+                            <textarea 
                                 className="form-control" 
-                                placeholder="Package Name"
-                                onChange={e=>setPackageName(e.target.value)}
-                            />
+                                placeholder="Modules"
+                                onChange={e=>setModules(e.target.value)}
+                            ></textarea>
+                        </div>
+                        <div className="col-md-6 mb-3">
+                            <textarea 
+                                className="form-control" 
+                                placeholder="Snippets"
+                                onChange={e=>setSnippets(e.target.value)}
+                            ></textarea>
                         </div>
                     </div>
                     <div className="mb-3">
@@ -67,5 +80,5 @@ const Insert = ()=>{
     )
 }
 
-export default Insert;
+export default AddArticle;
 

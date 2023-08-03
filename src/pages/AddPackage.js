@@ -4,6 +4,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import conf from "../config/react-quill"
 import Http from "../helpers/Http";
+import Multi from "../components/select/Multi";
 
 
 const AddPackage = ()=>{
@@ -28,6 +29,16 @@ const AddPackage = ()=>{
         console.log(title, type, packageName, content);
     }
 
+
+    const lists = [
+        {
+            title: "hello",
+            content: "world",
+            type: "asa"
+        }
+    ]
+
+
     return(
         <Layout>
             <div className="__form">
@@ -42,12 +53,13 @@ const AddPackage = ()=>{
                             />
                         </div>
                         <div className="col-md-5 mb-3">
-                            <select onChange={e=>setCategory(e.target.value)} className="form-select">
+                            <Multi lists={lists}/>
+                            {/* <select onChange={e=>setCategory(e.target.value)} className="form-select">
                                 <option>Select Category</option>
                                 <option value="tool">Tool</option>
                                 <option value="package">Package</option>
                                 <option value="configuration">Configuration</option>
-                            </select>
+                            </select> */}
                         </div>
                     </div>
                     <button type="submit" className="btn btn-dark">Submit</button>

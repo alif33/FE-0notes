@@ -10,26 +10,13 @@ const Sidebar = ()=>{
     const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
-        Http('get', '/posts')
+        Http('get', '/articles')
         .then(res=>{
-            setPosts(res.posts)
+            if(res.data){
+                setPosts(res.data)
+            }
         })
     }, [])
-
-
-    const infos = [
-        {
-            title: "axios",
-            content: "vsdvs fgfd th hrts fwewdfwf svdcawevd ",
-            type: "docs"
-        },
-        {
-            title: "react-icons",
-            content: "vsdvs fgfd th hrts fwewdfwf svdcawevd ",
-            type: "tools"
-        },
-    ]
-
 
     return(
         <div className="__sidebar">
