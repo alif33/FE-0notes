@@ -8,7 +8,7 @@ const Navbar = ()=>{
             <div className="d-flex justify-content-between">
                 <Link to="/"><h1>DEV</h1></Link>
                 <ul>
-                    <li><Link to="/make-package"><HiOutlineViewGridAdd size={20} color="#fff"/></Link></li>
+                    <li><Link to="/add-pattern"><HiOutlineViewGridAdd size={20} color="#fff"/></Link></li>
                     <li><Link to="/add-article"><MdAssignmentAdd size={20} color="#fff"/></Link></li>
                 </ul>
             </div>

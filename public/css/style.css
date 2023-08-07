@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ml-2{
+  margin-left: 10px;
+}
+
 .cursor-pointer{
   cursor: pointer;
 }
@@ -57,14 +61,15 @@ body {
   width: 250px;
   border-right: 1px solid #000000;
 }
-.__sidebar .select-list{
+.select-list{
   padding-top: 10px;
 }
-.__sidebar .select-list h5{
+.select-list h5{
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 400;
   padding-left: 10px;
+  cursor: pointer;
 }
 .__sidebar ul{
   margin: 10px 0px 2px 5px;
@@ -114,4 +119,16 @@ body {
 .snippet-list span, .modules span{
   margin-right: 10px;
   color: #9CDCFE;
+}
+
+.pattern {
+  border: 1px solid #efefef;
+  margin-right: 10px;
+}
+
+.selected {
+  padding: 2px 4px;
+  border-radius: 2px;
+  background-color: #efefef;
+  margin: 0px 5px;
 }

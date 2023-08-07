@@ -12,7 +12,9 @@ const EditArticle = ()=>{
     const [category, setCategory] = useState('');
     const [modules, setModules] = useState('');
     const [snippets, setSnippets] = useState('');
+    const [configuration, setConfiguration] = useState('');
     const [content, setContent] = useState('');
+
 
     const params = useParams();
 
@@ -25,6 +27,7 @@ const EditArticle = ()=>{
                 setCategory(data.category)
                 setModules(data.modules)
                 setSnippets(data.snippets)
+                setConfiguration(data.configuration)
                 setContent(data.content)
             }
         })
@@ -40,6 +43,7 @@ const EditArticle = ()=>{
             category,
             modules,
             snippets,
+            configuration,
             content
         })
         .then(res=>{
@@ -75,6 +79,7 @@ const EditArticle = ()=>{
                             </select>
                         </div>
                     </div>
+                    
                     <div className="row">
                         <div className="col-md-6 mb-3">
                             <textarea 
@@ -90,6 +95,16 @@ const EditArticle = ()=>{
                                 placeholder="Snippets"
                                 value={snippets}
                                 onChange={e=>setSnippets(e.target.value)}
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-12 mb-3">
+                            <textarea 
+                                className="form-control" 
+                                placeholder="Configuaration"
+                                value={configuration}
+                                onChange={e=>setConfiguration(e.target.value)}
                             ></textarea>
                         </div>
                     </div>

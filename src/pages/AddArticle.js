@@ -11,6 +11,7 @@ const AddArticle = ()=>{
     const [category, setCategory] = useState('');
     const [modules, setModules] = useState('');
     const [snippets, setSnippets] = useState('');
+    const [configuration, setConfiguration] = useState('');
     const [content, setContent] = useState('');
 
     const handleSubmit = e =>{
@@ -20,6 +21,7 @@ const AddArticle = ()=>{
             category,
             modules,
             snippets,
+            configuration,
             content
         })
         .then(res=>{
@@ -67,6 +69,15 @@ const AddArticle = ()=>{
                                 className="form-control" 
                                 placeholder="Snippets"
                                 onChange={e=>setSnippets(e.target.value)}
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-12 mb-3">
+                            <textarea 
+                                className="form-control" 
+                                placeholder="Configuaration"
+                                onChange={e=>setConfiguration(e.target.value)}
                             ></textarea>
                         </div>
                     </div>
