@@ -23,3 +23,4 @@ const Single = ({ lists, selected, handleSelect })=>{
 }
 
 export default Single
+

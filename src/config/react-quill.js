@@ -7,7 +7,7 @@ const conf = {
                 ['bold', 'italic', 'underline', 'strike', 'blockquote'],
                 [{ list: 'ordered' }, { list: 'bullet' }],
                 ['link', 'image', 'video'],
-                ['code'], // Add the 'code' option to the toolbar
+                ['code-block'], // Add the 'code' option to the toolbar
             ],
         },// Show the toolbar
         clipboard: {
