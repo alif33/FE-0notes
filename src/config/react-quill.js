@@ -8,6 +8,7 @@ const conf = {
                 [{ list: 'ordered' }, { list: 'bullet' }],
                 ['link', 'image', 'video'],
                 ['code-block'], // Add the 'code' option to the toolbar
+                ['table'], // Add the 'table' option to the toolbar
             ],
         },// Show the toolbar
         clipboard: {

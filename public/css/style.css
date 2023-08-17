@@ -7,6 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 .ml-2{
   margin-left: 10px;
 }
@@ -67,6 +80,7 @@ pre {
 .__sidebar {
   width: 250px;
   border-right: 1px solid #000000;
+
 }
 .select-list{
   padding-top: 10px;
@@ -110,6 +124,7 @@ pre {
 
 .content {
   width: 90%;
+  overflow-y: auto;
 }
 
 .__form {
