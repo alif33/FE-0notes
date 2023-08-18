@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Http from "../helpers/Http";
 import { BiAddToQueue } from "react-icons/bi";
-import Single from "../components/select/Single";
 import { toast } from "react-hot-toast";
 
 
@@ -78,8 +77,6 @@ const Pattern = ()=>{
         })
     }
 
-    console.log(pattern);
- 
     return(
         <Layout>
             <div className="d-flex justify-content-between p-3 bg-dark text-white">
@@ -157,7 +154,7 @@ const Pattern = ()=>{
                             key={index} 
                             className="ml-2 cursor-pointer"
                         >
-                          {item.title}:  {item.snippets}
+                         {"<"+item.title+">"}  {item.snippets}
                              <br/>
                         </span>
                     ))

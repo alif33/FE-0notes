@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Single from "../select/Single"
 import { Link } from "react-router-dom";
 import Http from "../../helpers/Http";
 import { BsLink45Deg } from "react-icons/bs"
