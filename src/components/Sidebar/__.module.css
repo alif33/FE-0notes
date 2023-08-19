@@ -1,11 +1,27 @@
 .sidebar {
     width: 250px;
     border-right: 1px solid #000000;
+    overflow-y: hidden;
 }
+.search_bar{
+    padding: 10px 5px;
+    position: relative;
+    height: 60px;
+}
+.search_bar input{
+    width: 100%;
+    padding: 0px 8px;
+    height: 35px;
+    border: 1px solid #AAA39A;
+    border-radius: 3px;
+} 
+
 .sidebar ul{
     margin: 10px 0px 2px 5px;
     padding: 0;
     list-style: none;
+    height: calc(100vh - 140px);
+    overflow-y: auto;
 }
 .sidebar ul li a{
     display: block;
@@ -17,6 +33,3 @@
     color: #000000;
 }
 
-.search_bar{
-    
-}

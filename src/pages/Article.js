@@ -6,6 +6,8 @@ import { LuEdit3 } from "react-icons/lu";
 import Snippets from "../components/article/Snippets";
 import Modules from "../components/article/Modules";
 import Commands from "../components/article/Commands";
+import { Helmet } from "react-helmet";
+import { titleFormatter } from "../helpers/Formatter";
 
 
 const Article = ()=>{
@@ -27,6 +29,11 @@ const Article = ()=>{
 
     return(
         <Layout>
+            {
+                article?.title &&<Helmet>
+                    <title>{titleFormatter(article?.title)}</title>
+                </Helmet> 
+            }
             <div className="d-flex justify-content-between p-3">
                 <h5 className="">{article?.title}</h5>
                 <div className="actions">

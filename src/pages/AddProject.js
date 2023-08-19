@@ -6,22 +6,16 @@ import conf from "../config/react-quill"
 import Http from "../helpers/Http";
 import { toast } from "react-hot-toast";
 
-const AddArticle = ()=>{
+const AddProject = ()=>{
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
-    const [modules, setModules] = useState("");
-    const [snippets, setSnippets] = useState("");
-    const [configuration, setConfiguration] = useState("");
     const [content, setContent] = useState("");
 
     const handleSubmit = e =>{
         e.preventDefault()
-        Http('post', '/article', {
+        Http('post', '/project', {
             title,
             category,
-            modules,
-            snippets,
-            configuration,
             content
         })
         .then(res=>{
@@ -29,10 +23,8 @@ const AddArticle = ()=>{
                 toast.success(`${res.message}`);
                 setTitle("");
                 setCategory("");
-                setModules("");
-                setSnippets("");
-                setConfiguration("");
                 setContent("");
+
             }
         })
         .catch(err=>{
@@ -57,37 +49,11 @@ const AddArticle = ()=>{
                         <div className="col-md-4 mb-3">
                             <select defaultValue={category} onChange={e=>setCategory(e.target.value)} className="form-select">
                                 <option>Select Category</option>
-                                <option value="tool">Tool</option>
-                                <option value="package">Package</option>
-                                <option value="configuration">Configuration</option>
+                                <option value="flutter">Flutter</option>
+                                <option value="laravel">Laravel</option>
+                                <option value="nextjs">Next JS</option>
+                                <option value="mern">MERN Stack</option>
                             </select>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-6 mb-3">
-                            <textarea 
-                                className="form-control" 
-                                placeholder="Modules"
-                                value={modules}
-                                onChange={e=>setModules(e.target.value)}
-                            ></textarea>
-                        </div>
-                        <div className="col-md-6 mb-3">
-                            <textarea 
-                                className="form-control" 
-                                placeholder="Snippets"
-                                value={snippets}
-                                onChange={e=>setSnippets(e.target.value)}
-                            ></textarea>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 mb-3">
-                            <textarea 
-                                className="form-control" 
-                                placeholder="Configuaration"
-                                onChange={e=>setConfiguration(e.target.value)}
-                            ></textarea>
                         </div>
                     </div>
                     <div className="mb-3">
@@ -100,5 +66,5 @@ const AddArticle = ()=>{
     )
 }
 
-export default AddArticle;
+export default AddProject;
 

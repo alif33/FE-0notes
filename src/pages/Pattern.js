@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Http from "../helpers/Http";
 import { BiAddToQueue } from "react-icons/bi";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 
 const Pattern = ()=>{
@@ -79,6 +80,9 @@ const Pattern = ()=>{
 
     return(
         <Layout>
+            <Helmet>
+                <title>{ "Ismail H" }</title>
+            </Helmet>
             <div className="d-flex justify-content-between p-3 bg-dark text-white">
                 <h5 className="">{pattern?.title}</h5>
                 <div className="actions">
