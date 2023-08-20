@@ -7,28 +7,22 @@ import Http from "../helpers/Http";
 import { toast } from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditArticle = ()=>{
-    const [title, setTitle] = useState('');
-    const [category, setCategory] = useState('');
-    const [modules, setModules] = useState('');
-    const [snippets, setSnippets] = useState('');
-    const [configuration, setConfiguration] = useState('');
-    const [content, setContent] = useState('');
+const EditProject = ()=>{
+    const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
+    const [content, setContent] = useState("");
 
     const params = useParams();
     const navigate = useNavigate();
 
     useEffect(()=>{
-        Http('get', `/article/${params._id}`)
+        Http('get', `/project/${params._id}`)
         .then(res=>{
             const { data } = res;
             if(data){
-                setTitle(data.title)
-                setCategory(data.category)
-                setModules(data.modules)
-                setSnippets(data.snippets)
-                setConfiguration(data.configuration)
-                setContent(data.content)
+                setTitle(data.title);
+                setCategory(data.category);
+                setContent(data.content);
             }
         })
         .catch(err=>{
@@ -38,12 +32,9 @@ const EditArticle = ()=>{
 
     const handleSubmit = e =>{
         e.preventDefault()
-        Http('put', `/article?_id=${params._id}`, {
+        Http('put', `/project?_id=${params._id}`, {
             title,
             category,
-            modules,
-            snippets,
-            configuration,
             content
         })
         .then(res=>{
@@ -79,36 +70,7 @@ const EditArticle = ()=>{
                                 <option value="configuration">Configuration</option>
                             </select>
                         </div>
-                    </div>
-                    
-                    <div className="row">
-                        <div className="col-md-6 mb-3">
-                            <textarea 
-                                className="form-control" 
-                                placeholder="Modules"
-                                value={modules}
-                                onChange={e=>setModules(e.target.value)}
-                            ></textarea>
-                        </div>
-                        <div className="col-md-6 mb-3">
-                            <textarea 
-                                className="form-control" 
-                                placeholder="Snippets"
-                                value={snippets}
-                                onChange={e=>setSnippets(e.target.value)}
-                            ></textarea>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 mb-3">
-                            <textarea 
-                                className="form-control" 
-                                placeholder="Configuaration"
-                                value={configuration}
-                                onChange={e=>setConfiguration(e.target.value)}
-                            ></textarea>
-                        </div>
-                    </div>
+                    </div>                    
                     <div className="mb-3">
                         <ReactQuill {...conf} value={content} onChange={setContent} />
                     </div>
@@ -119,5 +81,5 @@ const EditArticle = ()=>{
     )
 }
 
-export default EditArticle;
+export default EditProject;
 

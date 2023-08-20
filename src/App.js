@@ -11,6 +11,7 @@ import AddPattern from "./pages/AddPattern";
 import Pattern from "./pages/Pattern";
 import AddProject from "./pages/AddProject";
 import Project from "./pages/Project";
+import EditProject from "./pages/EditProject";
 
 function App() {
     return ( 
@@ -22,8 +23,10 @@ function App() {
           <Route path="/ar/:_id" element={<Article/>} />
           <Route path="/add-pattern" element={<AddPattern/>} />
           <Route path="/pt/:_id" element={<Pattern/>} />
-          <Route path="/p/:_id" element={<Project/>} />
           <Route path="/add-project" element={<AddProject/>} />
+          <Route path="/p/:_id" element={<Project/>} />
+          <Route path="/up/:_id" element={<EditProject/>} />
+
         </Routes>
       </BrowserRouter>
     );
