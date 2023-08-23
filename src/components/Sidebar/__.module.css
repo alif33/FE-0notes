@@ -3,10 +3,20 @@
     border-right: 1px solid #000000;
     overflow-y: hidden;
 }
+.top_bar{
+    height: 30px;
+}
+.top_bar ul{
+
+}
+.top_bar ul li{
+    float: left;
+    margin: 0px 4px;
+}
 .search_bar{
     padding: 10px 5px;
     position: relative;
-    height: 60px;
+    height: 50px;
 }
 .search_bar input{
     width: 100%;
@@ -17,10 +27,10 @@
 } 
 
 .sidebar ul{
-    margin: 10px 0px 2px 5px;
+    margin: 10px 0px 2px 0px;
     padding: 0;
     list-style: none;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 160px);
     overflow-y: auto;
 }
 .sidebar ul li a{
@@ -29,7 +39,13 @@
     font-size: 14px;
     font-weight: 400;
     padding: 1px 0px;
-    text-decoration: none;
+    padding-left: 5px;
     color: #000000;
+    text-decoration: none;
 }
-
+.active{
+    background-color: #000000;
+}
+.active a{
+    color: #ffffff !important;
+}

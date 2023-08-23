@@ -26,7 +26,6 @@ function App() {
           <Route path="/add-project" element={<AddProject/>} />
           <Route path="/p/:_id" element={<Project/>} />
           <Route path="/up/:_id" element={<EditProject/>} />
-
         </Routes>
       </BrowserRouter>
     );
