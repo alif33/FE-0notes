@@ -6,6 +6,7 @@ const conf = {
                 [{ header: [1, 2, 3, 4, 5, 6, false] }],
                 ['bold', 'italic', 'underline', 'strike', 'blockquote'],
                 [{ list: 'ordered' }, { list: 'bullet' }],
+                [{ 'color': [] }, { 'background': [] }],
                 ['link', 'image', 'video'],
                 ['code-block'], // Add the 'code' option to the toolbar
                 ['table'], // Add the 'table' option to the toolbar
