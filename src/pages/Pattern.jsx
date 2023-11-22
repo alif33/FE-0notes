@@ -6,7 +6,6 @@ import { BiAddToQueue } from "react-icons/bi";
 import { toast } from "react-hot-toast";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 
-
 const Pattern = ()=>{
     const [articles, setArticles] = useState();
     const [pattern, setPattern] = useState();
@@ -163,50 +162,7 @@ const Pattern = ()=>{
                             </span>
                         ))
                     }
-                </div>
-
-
-
-                {/* {
-                    isAdding && (
-                        <div className="p-3">
-                            <div className="w-50 m-auto">
-                                <Single
-                                    lists={articles} 
-                                    selected={selected} 
-                                    handleSelect={handleSelect}
-                                />
-                            </div>
-                            {
-                                selected && selected.map((slt, index)=>(
-                                    <span className="selected" key={index}>{slt.label}</span>
-                                ))
-                            }
-                            <div>
-                                <button>Push</button>
-                            </div>
-                        </div>
-                    )
-                } */}
-
-                
-
-
-
-                {/* {
-                    article?.commands && article?.commands?.length > 0 && <Commands commands={article?.commands}/>
-                }
-                {
-                    article?.modules && article?.modules?.length > 0 && <Modules modules={article?.modules}/>
-                }
-                {
-                    article?.snippets && article?.snippets?.length > 0 && <Snippets snippets={article?.snippets}/>
-                } */}
-                {/* <div className="p-3">
-                    {
-                        article?.content && <div dangerouslySetInnerHTML={{ __html: article?.content }} />
-                    }
-                </div> */}
+                </div>                
             </Layout>
         </HelmetProvider>
     )

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Http from "../helpers/Http";
-import { LuEdit3 } from "react-icons/lu";
+import { LuPen } from "react-icons/lu";
 import Snippets from "../components/article/Snippets";
 import Modules from "../components/article/Modules";
 import Commands from "../components/article/Commands";
@@ -38,7 +38,7 @@ const Article = ()=>{
                 <div className="d-flex justify-content-between p-3">
                     <h5 className="">{article?.title}</h5>
                     <div className="actions">
-                        <Link to={`/update-article/${params._id}`}><LuEdit3 className="cursor-pointer" size={20}/></Link>
+                        <Link to={`/update-article/${params._id}`}><LuPen className="cursor-pointer" size={20}/></Link>
                     </div>
                 </div>
                 {

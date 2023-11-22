@@ -1,1 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+.ql-editor {
+  font-size: 18px;
+}
+
+.ql-container.ql-snow {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+textarea:focus, 
+input:focus{
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+._li {
+  background-color: #000000 !important;
+}
+._a{
+  color: #ffffff !important;
+}
+.ml-2{
+  margin-left: 10px;
+}
+
+pre {
+  color: #ffffff;
+  background-color: #000000;
+  padding: 10px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.select-list{
+  padding-top: 10px;
+}
+.select-list h5{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.content {
+  width: 90%;
+  overflow-y: auto;
+}
+
+.__form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.snippet-list, .modules{
+  background-color: #1E1E1E;
+  padding: 2px 0px;
+  margin: 10px 0px;
+}
+
+.snippet-list span, .modules span{
+  margin-right: 10px;
+  color: #9CDCFE;
+}
+
+.pattern {
+  border: 1px solid #efefef;
+  margin-right: 10px;
+}
+
+.selected {
+  padding: 2px 4px;
+  border-radius: 2px;
+  background-color: #efefef;
+  margin: 0px 5px;
+}
