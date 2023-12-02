@@ -1,5 +1,5 @@
 import { 
-  BrowserRouter, 
+  HashRouter, 
   Routes, 
   Route
 } from "react-router-dom";
@@ -20,7 +20,7 @@ import EditProject from "./pages/EditProject";
 
 function App() {
     return ( 
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/add-article" element={<AddArticle/>} />
@@ -38,8 +38,9 @@ function App() {
           <Route path="/update-task/:_id" element={<EditTask/>} />
           <Route path="/t/:_id" element={<Task/>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     );
 }
 
 export default App;
+
