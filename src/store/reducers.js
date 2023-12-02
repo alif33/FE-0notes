@@ -1,8 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { Api } from './api';
+import { settingSlice } from './setting/slice';
+import { Article, Pattern, Project, Board, Task } from './api';
 
-// console.log(productsApi.reducerPath);
 export const rootReducer = combineReducers({
-    [Api.reducerPath]: Api.reducer,
-    // users: userSlice.reducer,
+    [Article.reducerPath]: Article.reducer,
+    [Pattern.reducerPath]: Pattern.reducer,
+    [Project.reducerPath]: Project.reducer,
+    [Board.reducerPath]: Board.reducer,
+    [Task.reducerPath]: Task.reducer,
+    setting: settingSlice.reducer
 })

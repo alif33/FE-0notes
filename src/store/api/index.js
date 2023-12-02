@@ -1,27 +1,28 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { Article, useGetArticlesQuery } from './article'
+import { Pattern, useGetPatternsQuery, useGetPatternQuery } from './pattern'
+import { Project, useGetProjectsQuery, useGetProjectQuery } from './project'
+import { Board, useGetBoardsQuery, useGetBoardQuery, useAddBoardMutation } from './board'
+import { Task, useGetTasksQuery, useGetTaskQuery, useUpdateTaskMutation } from './task'
 
-export const Api = createApi({
-  reducerPath: 'Api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://aidyb.vercel.app/api/' }),
-  endpoints: (builder) => ({
-    getPatterns: builder.query({
-      query: () => 'patterns',
-    }),
-    getProjects: builder.query({
-      query: () => 'projects',
-    }),
-    getPattern: builder.query({
-      query: (__id__) => `pattern/${__id__}`,
-    }),
-    getProject: builder.query({
-      query: (__id__) => `project/${__id__}`,
-    }),
-  }),
-})
+export { 
+  Article,
+  useGetArticlesQuery,  
 
-export const { 
-  useGetPatternsQuery, 
-  useGetPatternQuery, 
+  Pattern,
+  useGetPatternsQuery,
+  useGetPatternQuery,
+
+  Project,
   useGetProjectsQuery, 
-  useGetProjectQuery 
-} = Api
+  useGetProjectQuery,
+
+  Board, 
+  useGetBoardsQuery, 
+  useGetBoardQuery, 
+  useAddBoardMutation,
+
+  Task,
+  useGetTasksQuery,
+  useGetTaskQuery,
+  useUpdateTaskMutation
+}

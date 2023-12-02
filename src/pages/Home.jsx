@@ -8,44 +8,21 @@ import { getCookie, setCookie } from "../helpers/Cookie";
 import { useGetPatternsQuery, useGetProjectsQuery } from "../store/api"
 
 const Home= ()=>{
-    // const [projects, setProjects] = useState();
-    const { data: paterns, isLoading } = useGetPatternsQuery();
+    const { data: patterns, isLoading } = useGetPatternsQuery();
     const { data: projects } = useGetProjectsQuery();
 
+    console.log(patterns, projects);
 
-
-    // const fetchProjects = ()=>{
-    //     Http('get', '/projects')
-    //     .then(res=>{
-    //         if(res.data){
-    //             setProjects(res.data);
-    //         }
-    //     })
-    //     .catch(err=>{
-    //         console.log(err);
-    //     })
-    // }
-
-    // useEffect(()=>{
-    //     fetchPatterns();
-    //     fetchProjects();
-    //     const info = {
-    //         id: 345734,
-    //         roll: 45,
-    //         class: "Seven"
-    //     }
-    //     setCookie("name", JSON.stringify(info))
-    // }, [])
-    
     return(
         <Layout>
+            {/* <div className="w-[90%] overflow-y-hidden"> */}
             {
                 isLoading? <SyncLoader cssOverride={override} color="#AAA39A" />:(
                     <div className="m-4">
                         <h4>Patterns</h4>
                         <div className="row">
                             {
-                                paterns?.data && paterns.data.map(
+                                patterns?.data && patterns.data.map(
                                     (item, index)=><Card 
                                         key={index} 
                                         _id={item._id}
@@ -69,7 +46,7 @@ const Home= ()=>{
                     </div>
                 )
             }
-           
+            {/* </div> */}
         </Layout>
     )
 }

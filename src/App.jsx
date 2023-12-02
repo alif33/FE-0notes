@@ -10,6 +10,11 @@ import Article from "./pages/Article";
 import AddPattern from "./pages/AddPattern";
 import Pattern from "./pages/Pattern";
 import AddProject from "./pages/AddProject";
+import AddBoard from "./pages/AddBoard";
+import Board from "./pages/Board";
+import Task from "./pages/Task";
+import AddTask from "./pages/AddTask";
+import EditTask from "./pages/EditTask";
 import Project from "./pages/Project";
 import EditProject from "./pages/EditProject";
 
@@ -26,6 +31,12 @@ function App() {
           <Route path="/add-project" element={<AddProject/>} />
           <Route path="/p/:_id" element={<Project/>} />
           <Route path="/up/:_id" element={<EditProject/>} />
+          <Route path="/add-board" element={<AddBoard/>} />
+          <Route path="/b/:_id" element={<Board/>} />
+
+          <Route path="/add-task" element={<AddTask/>} />
+          <Route path="/update-task/:_id" element={<EditTask/>} />
+          <Route path="/t/:_id" element={<Task/>} />
         </Routes>
       </BrowserRouter>
     );

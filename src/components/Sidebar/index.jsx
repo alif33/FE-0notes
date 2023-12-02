@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import { GrTask } from "react-icons/gr";
 import { LiaStickyNoteSolid } from "react-icons/lia";
-import { HiOutlineViewGrid } from "react-icons/hi";
 import { VscSymbolMethod } from "react-icons/vsc";
 import Http from "../../helpers/Http";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./__.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { shiftingQuery } from "../../store/setting/action";
 
 const Sidebar = ()=>{
     const [posts, setPosts] = useState([]);
     const [filteredPost, setFilteredPost] = useState([]);
-    const [query, setQuery] = useState({
-        endPoint: "projects",
-        path: "p",
-        name: "Projects"
-    });  
+    const { query } = useSelector(state=>state.setting);
+    const dispatch = useDispatch();
+
     const location = useLocation();
     const current = location.pathname.split("/").reverse()[0];
 
@@ -28,13 +27,10 @@ const Sidebar = ()=>{
         })
     }, [query])
 
-    const handleShift = (endPoint, path, name)=>{
-        setQuery({
-           endPoint,
-           path,
-           name 
-        })
+    const handleShift = (name, path, endPoint)=>{
+        dispatch(shiftingQuery({name, path, endPoint}));
     }
+
     const handleChange = e =>{
         const filterdData = posts.filter((__) => {
             const title = __.title.toString().toLowerCase();
@@ -47,10 +43,27 @@ const Sidebar = ()=>{
         <div className={styles.sidebar}>
             <div className={styles.top_bar}>
                 <ul>
-                    <li><GrTask onClick={()=>handleShift("projects", "p", "Projects")} className="cursor-pointer" size={17}/></li>
-                    <li><HiOutlineViewGrid onClick={()=>handleShift("articles", "ar", "Articles")} className="cursor-pointer" size={20}/></li>
-                    <li><LiaStickyNoteSolid onClick={()=>handleShift("projects", "p", "Projects")} className="cursor-pointer" size={23}/></li>
-                    <li><VscSymbolMethod onClick={()=>handleShift("patterns", "pt", "Patterns")} className="cursor-pointer" size={22}/></li>
+                    <li className={`p-1 rounded-sm ${query.name==="Articles" && "bg-[#efefef]"}`}>
+                        <img 
+                            height={20}
+                            width={20}
+                            className="cursor-pointer"
+                            src="/icons/article.png"
+                            onClick={()=>handleShift("Articles", "ar", "articles")} 
+                        />
+                    </li>
+                    <li className={`p-1 ${query.name==="Projects" && "bg-[#efefef]"}`}><GrTask onClick={()=>handleShift("Projects", "p", "projects")} className="cursor-pointer" size={17}/></li>
+                    <li className={`p-1 ${query.name==="Patterns" && "bg-[#efefef]"}`}><VscSymbolMethod onClick={()=>handleShift("Patterns", "pt", "patterns")} className="cursor-pointer" size={22}/></li>
+                    <li className={`p-1 ${query.name==="Boards" && "bg-[#efefef]"}`}>
+                        <img 
+                            height={20}
+                            width={20}
+                            className="cursor-pointer"
+                            src="/icons/board.png"
+                            onClick={()=>handleShift("Boards", "b", "boards")}
+                        />
+                    </li>
+                    <li className={`p-1 ${query.name==="Tasks" && "bg-[#efefef]"}`}><LiaStickyNoteSolid onClick={()=>handleShift("Tasks",  "t", "tasks")} className="cursor-pointer" size={23}/></li>
                 </ul>
             </div>
             <div className={styles.search_bar}>

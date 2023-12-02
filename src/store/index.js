@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { rootReducer } from "./reducers";
-import { Api } from "./api";
+import { Article, Pattern, Project, Board, Task } from "./api";
 
 export const store = configureStore({ 
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        serializableCheck: false,
 
-    }).concat(Api.middleware),
+    }).concat(Article.middleware, 
+        Pattern.middleware, 
+        Project.middleware, 
+        Board.middleware, 
+        Task.middleware
+    ),
 })

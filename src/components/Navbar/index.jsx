@@ -7,7 +7,7 @@ const Navbar = ()=>{
     return(
        <div className={styles.__navbar}>
             <div className="d-flex justify-content-between">
-                <Link to="/"><h1>DEV</h1></Link>
+                <Link className="my-auto" to="/"><h1 className="text-3xl">DEV</h1></Link>
                 <ul>
                     <li><Link to="/add-project"><GoTasklist size={27} color="#fff"/></Link></li>
                     <li><Link to="/add-article"><HiOutlineViewGridAdd size={25} color="#fff"/></Link></li>
