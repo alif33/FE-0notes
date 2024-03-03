@@ -30,7 +30,7 @@
     margin: 10px 0px 2px 0px;
     padding: 0;
     list-style: none;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 185px);
     overflow-y: auto;
 }
 .sidebar ul li a{

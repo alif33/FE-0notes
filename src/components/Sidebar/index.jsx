@@ -72,7 +72,7 @@ const Sidebar = ()=>{
                     placeholder={`${query.name}`}
                 />
             </div>
-            <ul>
+            <ul >
                 {
                     filteredPost?.map((item, index)=>(
                         <li className={`${current===item._id? styles.active: ""}` } key={index}>
