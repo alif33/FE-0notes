@@ -35,7 +35,7 @@ const AddPackage = ()=>{
                             />
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-dark mt-3">Submit</button>
+                    <button type="submit" className="btn-submit">Submit</button>
                 </form>
             </div>
         </Layout>

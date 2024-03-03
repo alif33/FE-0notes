@@ -67,7 +67,7 @@ const AddTask = ()=>{
                     <div className="mb-3">
                         <ReactQuill {...conf} value={content} onChange={setContent} />
                     </div>
-                    <button type="submit" className="btn btn-dark">Submit</button>
+                    <button type="submit" className="btn-submit">Submit</button>
                 </form>
             </div>
         </Layout>

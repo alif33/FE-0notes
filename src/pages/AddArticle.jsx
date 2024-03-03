@@ -93,7 +93,7 @@ const AddArticle = ()=>{
                     <div className="mb-3">
                         <ReactQuill {...conf} value={content} onChange={setContent} />
                     </div>
-                    <button type="submit" className="bg-black text-white py-2 px-3 rounded-sm">Submit</button>
+                    <button type="submit" className="btn-submit">Submit</button>
                 </form>
             </div>
         </Layout>

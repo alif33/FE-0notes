@@ -11,6 +11,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-submit {
+  @apply bg-black text-white py-2 px-3 rounded-sm;
+}
+
+
 .h-body {
   height: calc(100vh - 80px);
 }
