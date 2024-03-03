@@ -36,7 +36,7 @@ const Article = ()=>{
                     </Helmet> 
                 }
                 <div className="d-flex justify-content-between p-3">
-                    <h5 className="">{article?.title}</h5>
+                    <h5 className="text-2xl font-medium">{article?.title}</h5>
                     <div className="actions">
                         <Link to={`/update-article/${params._id}`}><LuPen className="cursor-pointer" size={20}/></Link>
                     </div>
@@ -50,7 +50,7 @@ const Article = ()=>{
                 {
                     article?.snippets && article?.snippets?.length > 0 && <Snippets snippets={article?.snippets}/>
                 }
-                <div className="p-3">
+                <div id="view" className="p-3">
                     {
                         article?.content && <div dangerouslySetInnerHTML={{ __html: article?.content }} />
                     }
