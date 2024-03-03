@@ -43,7 +43,7 @@ const AddArticle = ()=>{
     return(
         <Layout>
             <div className="__form">
-                <form onSubmit={handleSubmit} className="mt-5">
+                <form onSubmit={handleSubmit} className="my-5">
                     <div className="row">
                         <div className="col-md-8 mb-3">
                             <input 
@@ -93,7 +93,7 @@ const AddArticle = ()=>{
                     <div className="mb-3">
                         <ReactQuill {...conf} value={content} onChange={setContent} />
                     </div>
-                    <button type="submit" className="btn btn-dark">Submit</button>
+                    <button type="submit" className="bg-black text-white py-2 px-3 rounded-sm">Submit</button>
                 </form>
             </div>
         </Layout>
