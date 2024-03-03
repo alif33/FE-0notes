@@ -1,8 +1,7 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-// export const baseURL = "http://localhost:4000/api/";
-export const baseURL = "https://aidyb.vercel.app/api/";
+export const baseURL = "https://dot0notes.vercel.app/api/";
 
 const api = axios.create({
   baseURL
